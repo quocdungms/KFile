@@ -48,7 +48,6 @@ vector<string> KFile::GetAllFilename(string path)
             }
         }
     }
-    list.back().pop_back();
     return list;
 }
 void KFile::CreateList(std::string header, std::vector<string> list, string path, bool flag)
@@ -58,7 +57,7 @@ void KFile::CreateList(std::string header, std::vector<string> list, string path
     output.open(dir_out, std::ios::out);
     while (!list.empty())
     {
-        output << header << " \"" << list.back() << "\"\n";
+        output << header << " " << list.back() << "\n";
         list.pop_back();
     }
 
